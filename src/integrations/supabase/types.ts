@@ -14,7 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      predictions: {
+        Row: {
+          confidence: number
+          created_at: string
+          features: Json
+          id: string
+          image_name: string
+          is_alert: boolean
+          label: string
+          reasoning: string | null
+          thumbnail: string | null
+          user_id: string
+        }
+        Insert: {
+          confidence?: number
+          created_at?: string
+          features?: Json
+          id?: string
+          image_name: string
+          is_alert?: boolean
+          label: string
+          reasoning?: string | null
+          thumbnail?: string | null
+          user_id: string
+        }
+        Update: {
+          confidence?: number
+          created_at?: string
+          features?: Json
+          id?: string
+          image_name?: string
+          is_alert?: boolean
+          label?: string
+          reasoning?: string | null
+          thumbnail?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
